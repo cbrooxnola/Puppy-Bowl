@@ -11,7 +11,7 @@ const details = document.querySelector('#details');
 const pupPic = document.querySelector('.pupPic');
 const ul = document.querySelector('ul');
 const single = document.querySelector('.single');
-const backToList = document.querySelector('#backToList');
+const backToList = document.querySelector('#backToList a');
 
 let puppies;
 
@@ -41,15 +41,18 @@ const render = () => {
     return puppy.id === hash;
   });
 
-  let detailsHtml = 'Select Puppy to see Breed and Picture!';
+  let detailsHtml = 'Select Puppy to see Picture!';
   let pupPicHtml;
  if (puppy){
-   detailsHtml = `${puppy.breed}`;
+   detailsHtml = `${puppy.name} <br> ${puppy.breed}`;
    pupPicHtml = `<img src='${puppy.imageUrl}'/>`;
+   ul.innerHTML = '';
+   backToList.innerHTML = "Return to Player List";
 }
 
-  details.innerHTML = detailsHtml;
-  pupPic.innerHTML = pupPicHtml;
+ // details.innerHTML = detailsHtml;
+  //pupPic.innerHTML = pupPicHtml;
+  single.innerHTML = `${detailsHtml} <br> ${pupPicHtml}`;
   
 };
 

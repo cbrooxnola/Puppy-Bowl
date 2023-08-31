@@ -8,15 +8,17 @@ h1 {
   text-align: center;
 }
 
-.selected {
-  border: solid 2px rgb(117, 32, 32);
-}
-
 ul {
   list-style-type: none;
   background-color: pink;
   padding: 1rem;
   display: flex;
+  border: solid 2px blueviolet;
+  font-size: 16px;
+}
+
+li {
+  border: solid 1 px blueviolet;
 }
 
 @media (max-width: 500px) {
@@ -28,14 +30,22 @@ ul {
 .single {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .pupPic {
-  display: flex;
-  height: 30vh;
-  width: 30vh;
+  height: 30%;
+  width: 30%;
 }
 
 #details {
   font-family: cursive;
+}
+
+#backToList a {
+  font-size: 18px;
+  font-family: verdana;
+  font-style: italic;
 }
