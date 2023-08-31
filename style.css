@@ -29,8 +29,9 @@ nav a {
 }
 }
 .pupPic {
-  height: 30%;
-  width: 30%;
+  display: flex;
+  height: 30vh;
+  width: 30vh;
 }
 
 #details {

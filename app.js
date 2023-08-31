@@ -41,15 +41,12 @@ const render = () => {
   let pupPicHtml;
  if (puppy){
    detailsHtml = `${puppy.breed}`;
-   pupPicHtml = (imageUrl) => {
-    return `<a href='${puppy.imageUrl}'></a>`;
-    
- };
+   pupPicHtml = `<img src='${puppy.imageUrl}'/>`;
 }
-  console.log(pupPicHtml());
+  console.log(pupPicHtml);
 
   details.innerHTML = detailsHtml;
-  pupPic.innerHTML = pupPicHtml();
+  pupPic.innerHTML = pupPicHtml;
   
 };
 
