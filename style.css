@@ -7,3 +7,7 @@ h1 {
   font-size: 44px;
   text-align: center;
 }
+
+.selected {
+  border: solid 2px rgb(117, 32, 32);
+}
