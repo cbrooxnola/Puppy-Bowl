@@ -9,7 +9,7 @@
 
 const pupList = document.querySelector('pupList');
 const singlePup = document.querySelector('singlePup');
-const ul = document.querySelector('ul');
+const nav = document.querySelector('nav');
 
 let puppies;
 
@@ -17,24 +17,25 @@ const fetchPuppies = async() => {
   const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/2109-UNF-HY-WEB-PT/players');
   const json = await response.json();
   puppies = json.data;
+  render();
   
-
+}; 
+  
+const render = () => {
   const hash = window.location.hash.slice(1)*1;
 
   const html = puppies.players.map( puppy => {
     return `
-    <li>
     <a href='#${puppy.id}' class='${ puppy.id === hash ? 'selected': ''}'>
     ${puppy.name}
     </a>
-    </li>
     `;
   }).join('');
-  ul.innerHTML = html;
+  nav.innerHTML = html;
   
-}
+};
 
 window.addEventListener('hashchange', () => {
-
+  render();
 });
 fetchPuppies();
