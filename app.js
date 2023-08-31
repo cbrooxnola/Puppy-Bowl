@@ -9,7 +9,9 @@
 
 const details = document.querySelector('#details');
 const pupPic = document.querySelector('.pupPic');
-const nav = document.querySelector('nav');
+const ul = document.querySelector('ul');
+const single = document.querySelector('.single');
+const backToList = document.querySelector('#backToList');
 
 let puppies;
 
@@ -26,12 +28,14 @@ const render = () => {
 
   const html = puppies.players.map( puppy => {
     return `
+    <li>
     <a href='#${puppy.id !== hash ? puppy.id : ''}' class='${ puppy.id === hash ? 'selected': ''}'>
-    ${puppy.name}
+    ${puppy.name}<br>${puppy.breed}
     </a>
+    </li>
     `;
   }).join('');
-  nav.innerHTML = html;
+  ul.innerHTML = html;
 
   const puppy = puppies.players.find( puppy => {
     return puppy.id === hash;
@@ -43,7 +47,6 @@ const render = () => {
    detailsHtml = `${puppy.breed}`;
    pupPicHtml = `<img src='${puppy.imageUrl}'/>`;
 }
-  console.log(pupPicHtml);
 
   details.innerHTML = detailsHtml;
   pupPic.innerHTML = pupPicHtml;
