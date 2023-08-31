@@ -7,8 +7,8 @@
 //make sure API data is sourced correctly and displayed to reflect such
 //give it some style
 
-const pupList = document.querySelector('pupList');
-const singlePup = document.querySelector('singlePup');
+const details = document.querySelector('#details');
+const pupPic = document.querySelector('.pupPic');
 const nav = document.querySelector('nav');
 
 let puppies;
@@ -26,12 +26,30 @@ const render = () => {
 
   const html = puppies.players.map( puppy => {
     return `
-    <a href='#${puppy.id}' class='${ puppy.id === hash ? 'selected': ''}'>
+    <a href='#${puppy.id !== hash ? puppy.id : ''}' class='${ puppy.id === hash ? 'selected': ''}'>
     ${puppy.name}
     </a>
     `;
   }).join('');
   nav.innerHTML = html;
+
+  const puppy = puppies.players.find( puppy => {
+    return puppy.id === hash;
+  });
+
+  let detailsHtml = 'Select Puppy to see Breed and Picture!';
+  let pupPicHtml;
+ if (puppy){
+   detailsHtml = `${puppy.breed}`;
+   pupPicHtml = (imageUrl) => {
+    return `<a href='${puppy.imageUrl}'></a>`;
+    
+ };
+}
+  console.log(pupPicHtml());
+
+  details.innerHTML = detailsHtml;
+  pupPic.innerHTML = pupPicHtml();
   
 };
 
