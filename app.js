@@ -29,9 +29,13 @@ const render = () => {
   const html = puppies.players.map( puppy => {
     return `
     <li>
-    <a href='#${puppy.id !== hash ? puppy.id : ''}' class='${ puppy.id === hash ? 'selected': ''}'>
-    ${puppy.name}<br>${puppy.breed}
+    <a style="text-decoration: none" href='#${puppy.id !== hash ? puppy.id : ''}' class='${ puppy.id === hash ? 'selected': ''}'>
+    ${puppy.name} 
     </a>
+    </li>
+    
+    <li>
+    <br>${puppy.breed}
     </li>
     `;
   }).join('');
@@ -41,11 +45,11 @@ const render = () => {
     return puppy.id === hash;
   });
 
-  let detailsHtml = 'Select Puppy to see Picture!';
-  let pupPicHtml;
+  let detailsHtml = 'Click Puppy Name to see Picture!';
+  let pupPicHtml = '';
  if (puppy){
    detailsHtml = `${puppy.name} <br> ${puppy.breed}`;
-   pupPicHtml = `<img src='${puppy.imageUrl}'/>`;
+   pupPicHtml = `<img src='${puppy.imageUrl}' width='360' height='410'/>`;
    ul.innerHTML = '';
    backToList.innerHTML = "Return to Player List";
 }

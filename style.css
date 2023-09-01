@@ -1,5 +1,6 @@
 body {
   background-color: rgb(227, 227, 114);
+  max-width: 100%;
 }
 
 h1 {
@@ -14,11 +15,8 @@ ul {
   padding: 1rem;
   display: flex;
   border: solid 2px blueviolet;
-  font-size: 16px;
-}
-
-li {
-  border: solid 1 px blueviolet;
+  font-size: 18px;
+  justify-content: space-around;
 }
 
 @media (max-width: 500px) {
@@ -29,15 +27,15 @@ li {
 
 .single {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   font-size: 22px;
   font-weight: 600;
+  color: purple;
 }
 
 .pupPic {
-  height: 30%;
-  width: 30%;
+  height: 30px;
+  width: 30px;
 }
 
 #details {
@@ -45,7 +43,8 @@ li {
 }
 
 #backToList a {
-  font-size: 18px;
-  font-family: verdana;
+  font-size: 22px;
+  font-family: cursive;
   font-style: italic;
+  font-weight: bolder;
 }
